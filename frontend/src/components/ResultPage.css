@@ -1,0 +1,41 @@
+.fullScreen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://i.imgur.com/V4Z3XsJ.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+ 
+.board {
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow:3px 3px 3px 3px #00000063;
+}
+
+.endBoard {
+    display: block;
+    text-align:end;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    height: 65%;
+    width: 50%;
+}
+
+.win {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 2%;
+    height: 12%;
+    width: 100%;
+}

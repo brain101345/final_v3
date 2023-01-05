@@ -64,28 +64,28 @@ const Signup = () => {
       const { data } = await signUp({
         variables: { name: values.username, password: values.password },
       });
-      console.log(data);
+      // console.log(data);
       if (data.signUp === "name already in use") {
         messageApi.open({
           type: "error",
           content: "Name Taken",
         });
-        console.log("Name Taken");
+        // console.log("Name Taken");
       } else if (data.signUp === "account created") {
         messageApi.open({
           type: "success",
           content: "Account Created, Please Log In",
         });
-        console.log("Success:", values);
+        // console.log("Success:", values);
         // navigate("/login");
       }
     } else {
-      console.log("Not confirmed:", values);
+      // console.log("Not confirmed:", values);
     }
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
   return (
     <Wrapper>

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const ResultPage = () => {
   const navigate = useNavigate();
   const { room } = useParams();
-  console.log(room);
+  // console.log(room);
   const columns = [
     {
       title: "Rank",

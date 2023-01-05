@@ -72,7 +72,7 @@ const Time = () => {
         <div className="App">
             <h2>{timer}</h2>
             <button onClick={onClickReset}>Reset</button>
-            {timer==='00:00:00' && firstStart? console.log("done"):<></>}
+            {timer==='00:00:00' && firstStart? // console.log("done"):<></>}
         </div>
     )
 }

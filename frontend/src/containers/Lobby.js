@@ -104,14 +104,14 @@ const Lobby = () => {
         updateQuery: (prev, { subscriptionData }) => {
           if (!subscriptionData.data) return prev;
           const roomList = subscriptionData.data.roomList;
-          // console.log(roomList);
+          // // console.log(roomList);
           return {
             roomList,
           };
         },
       });
     } catch (e) {
-      console.log("Error in subscription:", e);
+      // console.log("Error in subscription:", e);
     }
   }, [subscribeToMore]);
   const handleLogout = () => {

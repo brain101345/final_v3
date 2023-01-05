@@ -259,9 +259,9 @@ const Game = () => {
         updateQuery: (prev, { subscriptionData }) => {
           if (!subscriptionData.data) return prev;
           const Game = subscriptionData.data;
-          console.log(Game);
+          // console.log(Game);
           if (Game.game.end) {
-            console.log("呱呱");
+            // console.log("呱呱");
             setRoundEnd(true);
             return Game;
           }
@@ -269,14 +269,14 @@ const Game = () => {
         },
       });
     } catch (e) {
-      console.log("Error in subscription:", e);
+      // console.log("Error in subscription:", e);
     }
   }, [GameSubscribe, me, room]);
 
   ////////////////////////////////////////////////////////////////
   useEffect(() => {
     if (!loading) {
-      console.log(Game);
+      // console.log(Game);
       // find self index
       setMyNumber(
         Game.game.users.findIndex((user) => {
@@ -309,8 +309,8 @@ const Game = () => {
         ]);
       }
     }
-    console.log(players);
-    console.log(myInfo);
+    // console.log(players);
+    // console.log(myInfo);
   }, [players]);
 
   useEffect(() => {
@@ -334,12 +334,12 @@ const Game = () => {
 
   const handleOppoCard = async (choose) => {
     setChooseOppo(false);
-    console.log(choose);
-    // console.log(UsingCard);
+    // console.log(choose);
+    // // console.log(UsingCard);
 
     if (UsingCard === 1) {
       setOpponentChosen(choose);
-      console.log("open guard modal");
+      // console.log("open guard modal");
       setGuardModalOpen(true);
       // setUsedCard(1);
     } else {
@@ -352,13 +352,13 @@ const Game = () => {
           roomName: room,
         },
       });
-      console.log(log);
+      // console.log(log);
     }
   };
 
   const handleUse = async (card, index) => {
     if (Game.game.turn !== me) {
-      console.log("Not Your Turn");
+      // console.log("Not Your Turn");
       return;
     }
     setUse(true);
@@ -366,7 +366,7 @@ const Game = () => {
 
     switch (card) {
       case 1: {
-        console.log("use gurad");
+        // console.log("use gurad");
         if (
           (players[0].protected || players[0].out) &&
           (players[1].protected || players[1].out) &&
@@ -386,7 +386,7 @@ const Game = () => {
               cadTo: null,
             },
           });
-          console.log(log);
+          // console.log(log);
           setChooseOppo(false);
           break;
         }
@@ -396,7 +396,7 @@ const Game = () => {
         break;
       }
       case 2: {
-        console.log("use Priest");
+        // console.log("use Priest");
         if (
           (players[0].protected || players[0].out) &&
           (players[1].protected || players[1].out) &&
@@ -416,7 +416,7 @@ const Game = () => {
               cadTo: null,
             },
           });
-          console.log(log);
+          // console.log(log);
           setChooseOppo(false);
           break;
         }
@@ -426,7 +426,7 @@ const Game = () => {
         break;
       }
       case 3: {
-        console.log("use Baron");
+        // console.log("use Baron");
         if (
           (players[0].protected || players[0].out) &&
           (players[1].protected || players[1].out) &&
@@ -446,7 +446,7 @@ const Game = () => {
               cadTo: null,
             },
           });
-          console.log(log);
+          // console.log(log);
           setChooseOppo(false);
           break;
         }
@@ -456,7 +456,7 @@ const Game = () => {
         break;
       }
       case 4: {
-        console.log("use maid");
+        // console.log("use maid");
         setUsingCard(4);
         // setUsedCard(4);
         setChooseOppo(false);
@@ -468,7 +468,7 @@ const Game = () => {
             roomName: room,
           },
         });
-        console.log(log);
+        // console.log(log);
         break;
       }
       case 5: {
@@ -477,7 +477,7 @@ const Game = () => {
             return c === 7;
           })
         ) {
-          console.log("You need to use countess");
+          // console.log("You need to use countess");
           messageApi.open({
             duration: "2",
             type: "error",
@@ -487,7 +487,7 @@ const Game = () => {
           break;
         }
 
-        console.log("use Prince");
+        // console.log("use Prince");
         setChooseOppo(true);
         setUsingCard(5);
         // setUsedCard(5);
@@ -500,7 +500,7 @@ const Game = () => {
             return c === 7;
           })
         ) {
-          console.log("You need to use countess");
+          // console.log("You need to use countess");
           messageApi.open({
             duration: "2",
             type: "error",
@@ -528,46 +528,46 @@ const Game = () => {
               cadTo: null,
             },
           });
-          console.log(log);
+          // console.log(log);
           break;
         }
-        console.log("use King");
+        // console.log("use King");
         setChooseOppo(true);
         setUsingCard(6);
         // setUsedCard(6);
         break;
       }
       case 7: {
-        console.log("use Countess");
+        // console.log("use Countess");
         log = await action({
           variables: { from: me, to: null, card: card, roomName: room },
         });
-        console.log(log);
+        // console.log(log);
         setUsingCard(7);
         setChooseOppo(false);
         // setUsedCard(7);
         break;
       }
       case 8: {
-        console.log("use princess");
+        // console.log("use princess");
         setUsingCard(8);
         log = await action({
           variables: { from: me, to: null, card: card, roomName: room },
         });
-        console.log(log);
+        // console.log(log);
         setChooseOppo(false);
         // setUsedCard(8);
         break;
       }
       default: {
-        console.log("ERROR");
+        // console.log("ERROR");
         break;
       }
     }
   };
 
   useEffect(() => {
-    // console.log(usedCard);
+    // // console.log(usedCard);
   }, [usedCard]);
 
   //
@@ -691,7 +691,7 @@ const Game = () => {
                 roomName: room,
               },
             });
-            console.log(log);
+            // console.log(log);
           }}
         />
       ) : (
@@ -727,8 +727,16 @@ const Game = () => {
           <Player1Card style={{ zIndex: 1 }} />
           {players[0]?.name === Game.game.turn ? (
             <Player1Card style={{ zIndex: 1 }} />
+          ) : players[0]?.protected ? (
+            <Sheild
+              style={{
+                top: "25vh",
+                left: "9vw",
+                content: "url(https://i.imgur.com/IGdexgg.png)",
+              }}
+            />
           ) : (
-            players[0]?.protected?<Sheild style={{top:"25vh",left:"9vw",content: "url(https://i.imgur.com/IGdexgg.png)"}}/>:""
+            ""
           )}
         </Player1CardWrapper>
       ) : (
@@ -739,8 +747,16 @@ const Game = () => {
           <Player2Card style={{ zIndex: 1 }} />
           {players[1]?.name === Game.game.turn ? (
             <Player2Card style={{ zIndex: 1 }} />
+          ) : players[1]?.protected ? (
+            <Sheild
+              style={{
+                top: "5vh",
+                left: "20vw",
+                content: "url(https://i.imgur.com/IGdexgg.png)",
+              }}
+            />
           ) : (
-            players[1]?.protected?<Sheild style={{top:"5vh",left:"20vw",content: "url(https://i.imgur.com/IGdexgg.png)"}}/>:""
+            ""
           )}
         </Player2CardWrapper>
       ) : (
@@ -751,8 +767,16 @@ const Game = () => {
           <Player3Card style={{ zIndex: 1 }} />
           {players[2]?.name === Game.game.turn ? (
             <Player3Card style={{ zIndex: 1 }} />
+          ) : players[2]?.protected ? (
+            <Sheild
+              style={{
+                top: "25vh",
+                right: "9vw",
+                content: "url(https://i.imgur.com/IGdexgg.png)",
+              }}
+            />
           ) : (
-            players[2]?.protected?<Sheild style={{top:"25vh",right:"9vw",content: "url(https://i.imgur.com/IGdexgg.png)"}}/>:""
+            ""
           )}
         </Player3CardWrapper>
       ) : (

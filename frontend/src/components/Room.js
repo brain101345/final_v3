@@ -99,7 +99,7 @@ const Room = () => {
   const navigate = useNavigate();
   const { roomName } = useParams();
   const { me, gameStart, setGameStart } = useGame();
-  // console.log(roomName);
+  // // console.log(roomName);
 
   const [leaveRoom] = useMutation(LEAVE_ROOM);
   const [prepare] = useMutation(PREPARE);
@@ -139,7 +139,7 @@ const Room = () => {
   }, [unprepareSuccess]);
   const handleLeave = () => {
     if (Pre === "Unprepare") {
-      // console.log("Unprepare first");
+      // // console.log("Unprepare first");
       setAllowLeave(false);
       return;
     }
@@ -163,7 +163,7 @@ const Room = () => {
   });
 
   if (!loading) {
-    // console.log(data);
+    // // console.log(data);
   }
   // useEffect(() => {
   //   if (data?.roomPlayer.length === 5) {
@@ -182,14 +182,14 @@ const Room = () => {
           }
           let roomPlayer = subscriptionData.data.roomPlayer;
           if (roomPlayer.length === 5) {
-            console.log("呱呱");
-            console.log(prev);
+            // console.log("呱呱");
+            // console.log(prev);
             let newRoomPlayer = deepClone(prev);
             newRoomPlayer.roomPlayer[0].isPrepared = false;
             newRoomPlayer.roomPlayer[1].isPrepared = false;
             newRoomPlayer.roomPlayer[2].isPrepared = false;
             newRoomPlayer.roomPlayer[3].isPrepared = false;
-            console.log(newRoomPlayer);
+            // console.log(newRoomPlayer);
             setGameStart(true);
             navigate(`/game/${roomName}/${me}`);
             return newRoomPlayer;
@@ -200,7 +200,7 @@ const Room = () => {
         },
       });
     } catch (e) {
-      console.log("Error in subscription:", e);
+      // console.log("Error in subscription:", e);
     }
   }, [subscribeToMore]);
 

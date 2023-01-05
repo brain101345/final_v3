@@ -77,8 +77,7 @@ const Game = () => {
     error,
   } = useQuery(GAME_START, { variables: { name: me, roomName: room } });
   if (!loading) {
-    console.log(Game);
-
+    // console.log(Game);
     // setSelfInfo(Game?.users?.filter(user=>{return user.name===me}))
   }
 

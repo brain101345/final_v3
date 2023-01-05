@@ -13,11 +13,11 @@ const GuardModal = ({
 }) => {
   const [guessType, setGuessType] = useState("???");
   const { me, action } = useGame();
-  console.log(OpponentChosen, room);
+  // console.log(OpponentChosen, room);
 
   const handleGuess = () => {
     if (guessType === "???") {
-      console.log("Choose a Type");
+      // console.log("Choose a Type");
     } else {
       switch (guessType) {
         case "❷神父": {
@@ -31,11 +31,11 @@ const GuardModal = ({
             },
           });
 
-          console.log("choose priest");
+          // console.log("choose priest");
           break;
         }
         case "❸男爵": {
-          console.log("choose boran");
+          // console.log("choose boran");
           action({
             variables: {
               from: me,
@@ -48,7 +48,7 @@ const GuardModal = ({
           break;
         }
         case "❹侍女": {
-          console.log("choose maid");
+          // console.log("choose maid");
           action({
             variables: {
               from: me,
@@ -61,7 +61,7 @@ const GuardModal = ({
           break;
         }
         case "❺王子": {
-          console.log("choose prince");
+          // console.log("choose prince");
           action({
             variables: {
               from: me,
@@ -74,7 +74,7 @@ const GuardModal = ({
           break;
         }
         case "❻國王": {
-          console.log("choose king");
+          // console.log("choose king");
           action({
             variables: {
               from: me,
@@ -87,7 +87,7 @@ const GuardModal = ({
           break;
         }
         case "❼公爵夫人": {
-          console.log("choose countess");
+          // console.log("choose countess");
           action({
             variables: {
               from: me,
@@ -100,7 +100,7 @@ const GuardModal = ({
           break;
         }
         case "❽公主": {
-          console.log("choose princess");
+          // console.log("choose princess");
           action({
             variables: {
               from: me,
@@ -113,7 +113,7 @@ const GuardModal = ({
           break;
         }
         default: {
-          console.log("System Error");
+          // console.log("System Error");
         }
       }
       setGuardModalOpen(false);

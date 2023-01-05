@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "./InGameLeaderBoard.css";
 
 const InGameLeaderBoard = ({ Game }) => {
-  console.log(Game);
+  // console.log(Game);
   const [rankedPlayer, setRankedPlayer] = useState([]);
   return (
     <table className="leaderboard">

@@ -66,26 +66,26 @@ const Login = () => {
     const { data, loading } = await loginUser({
       variables: { name: values.username, password: values.password },
     });
-    // console.log(data);
+    // // console.log(data);
     if (data.signIn === "invalid account") {
       localStorage.setItem("save-me", values.username);
       InvalidAccount();
-      // console.log("Invalid account");
+      // // console.log("Invalid account");
     } else if (data.signIn === "invalid password") {
       localStorage.setItem("save-me", values.username);
       WrongPassword();
-      // console.log("Wrong password");
+      // // console.log("Wrong password");
     } else {
-      // console.log("Success:", values);
+      // // console.log("Success:", values);
       setMe(values.username);
       localStorage.setItem("save-me", values.username);
       LoginSuccess();
       setLogin(true);
-      console.log(data);
+      // console.log(data);
     }
   };
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
 
   useEffect(() => {

@@ -50,7 +50,7 @@ const RoundEnd = ({ open, Game }) => {
 
   // let round = 1;
   let title = "Result";
-  console.log(Game);
+  // console.log(Game);
   return (
     <>
       <Modal

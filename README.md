@@ -76,7 +76,7 @@ Deployment: Railway
  - step11: 小遊戲 -- 在大廳中可以點選右上角Love Spin 按鈕可以進入轉轉樂抽土味情話
 
 ### Deploy網址
-* url: https://finalv3-production.up.railway.app/
+* url: https://webfinal-production.up.railway.app/
 
 ### 每位組員負責項目 
 * B09901021 鄭定緯：
